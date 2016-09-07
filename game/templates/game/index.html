@@ -1,0 +1,19 @@
+{% if card_list %}
+	<table style="width:100%">
+		<tr>
+			<th>Word</th>
+			<th>Color</th>
+			<th>Visibility</th>
+		</tr>
+		{% for card in card_list %}
+			<tr>
+				<td>{{ card.word }}</td>
+				<td>{{ card.color }}</td>
+				<td>{{ card.visibility }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% else %}
+	<p> There are no cards. </p>
+{% endif %}
+
