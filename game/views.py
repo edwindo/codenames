@@ -9,6 +9,12 @@ from .models import Card
 
 def index(request):
 
+	card_list = Card.objects.all()
+	context = {'card_list': card_list}
+	return render(request, 'game/index.html', context)
+
+
+def generate_board(request):
 	"""
 	Read from word list and populate list
 	"""
@@ -18,11 +24,31 @@ def index(request):
 		for word in f:
 			WORD_LIST.append(word.strip())
 
+	"""
+	Randomly sample for 25 words from word list
+	"""
 	random_list = random.sample(WORD_LIST, 25)
-	print random_list
 
-	card_list = Card.objects.all()
-	context = {'card_list': card_list}
+	"""
+	Generate random list of colors
+	"""
+	#TODO
+
+	"""
+	Delete existing cards
+	"""
+	#TODO
+
+	"""
+	Create the new cards in database
+	"""
+	#TODO
+
+	"""
+	Redirect to board view
+	"""
+	#TODO
+
 	return render(request, 'game/index.html', context)
 
 
