@@ -2,8 +2,10 @@ import os
 import random
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
+from django.urls import reverse
+
 
 from .models import Card
 
@@ -32,24 +34,33 @@ def generate_board(request):
 	"""
 	Generate random list of colors
 	"""
-	#TODO
+	random_color_list = []
+	for n in range(0,8):
+		random_color_list.append("blue")
+	for n in range(0,9):
+		random_color_list.append("red")
+	for n in range(0,7):
+		random_color_list.append("yellow")
+	random_color_list.append("black")
+
+	random.shuffle(random_color_list)
 
 	"""
 	Delete existing cards
 	"""
-	#TODO
+	Card.objects.all().delete()
 
 	"""
 	Create the new cards in database
 	"""
-	#TODO
+	for i in range(0,25):
+		card = Card(word = random_list[i], color = random_color_list[i], visibility = True)
+		card.save()
 
 	"""
 	Redirect to board view
 	"""
-	#TODO
-
-	return render(request, 'game/index.html', context)
+	return HttpResponseRedirect(reverse('index'))
 
 
 
