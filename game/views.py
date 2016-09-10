@@ -12,7 +12,14 @@ from .models import Card
 def index(request):
 
 	card_list = Card.objects.all()
-	context = {'card_list': card_list}
+	red_count = 0
+	blue_count = 0
+	for card in card_list:
+		if card.color == "red" and not card.visibility:
+			red_count += 1
+		if card.color == "blue" and not card.visibility:
+			blue_count += 1
+	context = {'card_list': card_list, 'red_count': red_count, 'blue_count': blue_count}
 	return render(request, 'game/index.html', context)
 
 
@@ -70,7 +77,21 @@ def toggle_card(request, card_id):
 
 def codemaster(request):
 	card_list = Card.objects.all()
-	context = {'card_list': card_list}
+	red_list = []
+	blue_list = []
+	yellow_list = []
+	
+	for card in card_list:
+		if card.color == "red":
+			red_list.append(card)
+		if card.color == "blue":
+			blue_list.append(card)
+		if card.color == "yellow":
+			yellow_list.append(card)
+		if card.color == "black":
+			assassinCard = card
+
+	context = {'red_list':red_list, 'blue_list':blue_list, 'yellow_list':yellow_list, 'assassinCard':assassinCard}
 	return render(request, 'game/codemaster.html', context)
 
 

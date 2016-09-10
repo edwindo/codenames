@@ -11,6 +11,7 @@ td{
 	padding: 10px;
 }
 
+
 </style>
 </head>
 
@@ -51,8 +52,12 @@ td{
 			<td {% if card_list.23.visibility %} bgcolor="{{ card_list.23.color }}" {% endif %}><a href='toggle_card/{{ card_list.23.id }}'>{{ card_list.23.word }}</a></td>
 			<td {% if card_list.24.visibility %} bgcolor="{{ card_list.24.color }}" {% endif %}><a href='toggle_card/{{ card_list.24.id }}'>{{ card_list.24.word }}</a></td>
 		</tr>
-	</table>	
-
+	</table>
+<body style="font-size: 50px;">
+	<a href='generate_board/'>New Game</a>
+	<p>Red Cards Left: {{ red_count }}</p>
+	<p>Blue Cards Left: {{ blue_count }}</p>
+</body>
 
 {% else %}
 	<p> There are no cards. </p>

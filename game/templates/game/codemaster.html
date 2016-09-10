@@ -2,36 +2,26 @@ Game!
 
 <h1>Red Words</h1>
 <ul>
-	{% for card in card_list %}
-		{% if card.color == "red" %}
-			<li>{{ card.word }}</li>
-		{% endif %}
+	{% for card in red_list %}
+		<li>{{ card.word }}</li>
 	{% endfor %}
 </ul>
 
 <h1>Blue Words</h1>
 <ul>
-	{% for card in card_list %}
-		{% if card.color == "blue" %}
-			<li>{{ card.word }}</li>
-		{% endif %}
+	{% for card in blue_list %}
+		<li>{{ card.word }}</li>
 	{% endfor %}
 </ul>
 
 <h1>Bystanders</h1>
 <ul>
-	{% for card in card_list %}
-		{% if card.color == "yellow" %}
-			<li>{{ card.word }}</li>
-		{% endif %}
+	{% for card in yellow_list %}
+		<li>{{ card.word }}</li>
 	{% endfor %}
 </ul>
 
 <h1>Assassin Word</h1>
 <ul>
-	{% for card in card_list %}
-		{% if card.color == "black" %}
-			<li>{{ card.word }}</li>
-		{% endif %}
-	{% endfor %}
+	<li>{{ assassinCard.word }}</li>
 </ul>
