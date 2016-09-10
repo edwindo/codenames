@@ -54,13 +54,26 @@ def generate_board(request):
 	Create the new cards in database
 	"""
 	for i in range(0,25):
-		card = Card(word = random_list[i], color = random_color_list[i], visibility = True)
+		card = Card(word = random_list[i], color = random_color_list[i], visibility = False)
 		card.save()
 
 	"""
 	Redirect to board view
 	"""
 	return HttpResponseRedirect(reverse('index'))
+
+def toggle_card(request, card_id):
+	card = Card.objects.get(pk=card_id)
+	card.visibility = True
+	card.save()
+	return HttpResponseRedirect(reverse('index'))
+
+def codemaster(request):
+	card_list = Card.objects.all()
+	context = {'card_list': card_list}
+	return render(request, 'game/codemaster.html', context)
+
+
 
 
 

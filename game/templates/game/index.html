@@ -1,47 +1,55 @@
 <head>
 <style>
-table, th, td {
-    border: 1px solid black;
+table{
+	width:100%;
+	border: 1px solid black;
 }
+td{
+	text-align: center;
+	border: 1px solid black;
+	font-size: 30px;
+	padding: 10px;
+}
+
 </style>
 </head>
 
 {% if card_list %}
 	<table>
 		<tr> 
-			<td>{{ card_list.0.word }}</td>
-			<td>{{ card_list.1.word }}</td>
-			<td>{{ card_list.2.word }}</td>
-			<td>{{ card_list.3.word }}</td>
-			<td>{{ card_list.4.word }}</td>
+			<td {% if card_list.0.visibility %} bgcolor="{{ card_list.0.color }}" {% endif %}><a href='toggle_card/{{ card_list.0.id }}'>{{ card_list.0.word }}</a></td>
+			<td {% if card_list.1.visibility %} bgcolor="{{ card_list.1.color }}" {% endif %}><a href='toggle_card/{{ card_list.1.id }}'>{{ card_list.1.word }}</a></td>
+			<td {% if card_list.2.visibility %} bgcolor="{{ card_list.2.color }}" {% endif %}><a href='toggle_card/{{ card_list.2.id }}'>{{ card_list.2.word }}</a></td>
+			<td {% if card_list.3.visibility %} bgcolor="{{ card_list.3.color }}" {% endif %}><a href='toggle_card/{{ card_list.3.id }}'>{{ card_list.3.word }}</a></td>
+			<td {% if card_list.4.visibility %} bgcolor="{{ card_list.4.color }}" {% endif %}><a href='toggle_card/{{ card_list.4.id }}'>{{ card_list.4.word }}</a></td>
 		</tr>
 		<tr> 
-			<td>{{ card_list.5.word }}</td>
-			<td>{{ card_list.6.word }}</td>
-			<td>{{ card_list.7.word }}</td>
-			<td>{{ card_list.8.word }}</td>
-			<td>{{ card_list.9.word }}</td>
+			<td {% if card_list.5.visibility %} bgcolor="{{ card_list.5.color }}" {% endif %}><a href='toggle_card/{{ card_list.5.id }}'>{{ card_list.5.word }}</a></td>
+			<td {% if card_list.6.visibility %} bgcolor="{{ card_list.6.color }}" {% endif %}><a href='toggle_card/{{ card_list.6.id }}'>{{ card_list.6.word }}</a></td>
+			<td {% if card_list.7.visibility %} bgcolor="{{ card_list.7.color }}" {% endif %}><a href='toggle_card/{{ card_list.7.id }}'>{{ card_list.7.word }}</a></td>
+			<td {% if card_list.8.visibility %} bgcolor="{{ card_list.8.color }}" {% endif %}><a href='toggle_card/{{ card_list.8.id }}'>{{ card_list.8.word }}</a></td>
+			<td {% if card_list.9.visibility %} bgcolor="{{ card_list.9.color }}" {% endif %}><a href='toggle_card/{{ card_list.9.id }}'>{{ card_list.9.word }}</a></td>
 		</tr>
 		<tr> 
-			<td>{{ card_list.10.word }}</td>
-			<td>{{ card_list.11.word }}</td>
-			<td>{{ card_list.12.word }}</td>
-			<td>{{ card_list.13.word }}</td>
-			<td>{{ card_list.14.word }}</td>
+			<td {% if card_list.10.visibility %} bgcolor="{{ card_list.10.color }}" {% endif %}><a href='toggle_card/{{ card_list.10.id }}'>{{ card_list.10.word }}</a></td>
+			<td {% if card_list.11.visibility %} bgcolor="{{ card_list.11.color }}" {% endif %}><a href='toggle_card/{{ card_list.11.id }}'>{{ card_list.11.word }}</a></td>
+			<td {% if card_list.12.visibility %} bgcolor="{{ card_list.12.color }}" {% endif %}><a href='toggle_card/{{ card_list.12.id }}'>{{ card_list.12.word }}</a></td>
+			<td {% if card_list.13.visibility %} bgcolor="{{ card_list.13.color }}" {% endif %}><a href='toggle_card/{{ card_list.13.id }}'>{{ card_list.13.word }}</a></td>
+			<td {% if card_list.14.visibility %} bgcolor="{{ card_list.14.color }}" {% endif %}><a href='toggle_card/{{ card_list.14.id }}'>{{ card_list.14.word }}</a></td>
 		</tr>
 		<tr> 
-			<td>{{ card_list.15.word }}</td>
-			<td>{{ card_list.16.word }}</td>
-			<td>{{ card_list.17.word }}</td>
-			<td>{{ card_list.18.word }}</td>
-			<td>{{ card_list.19.word }}</td>
+			<td {% if card_list.15.visibility %} bgcolor="{{ card_list.15.color }}" {% endif %}><a href='toggle_card/{{ card_list.15.id }}'>{{ card_list.15.word }}</a></td>
+			<td {% if card_list.16.visibility %} bgcolor="{{ card_list.16.color }}" {% endif %}><a href='toggle_card/{{ card_list.16.id }}'>{{ card_list.16.word }}</a></td>
+			<td {% if card_list.17.visibility %} bgcolor="{{ card_list.17.color }}" {% endif %}><a href='toggle_card/{{ card_list.17.id }}'>{{ card_list.17.word }}</a></td>
+			<td {% if card_list.18.visibility %} bgcolor="{{ card_list.18.color }}" {% endif %}><a href='toggle_card/{{ card_list.18.id }}'>{{ card_list.18.word }}</a></td>
+			<td {% if card_list.19.visibility %} bgcolor="{{ card_list.19.color }}" {% endif %}><a href='toggle_card/{{ card_list.19.id }}'>{{ card_list.19.word }}</a></td>
 		</tr>
 		<tr> 
-			<td>{{ card_list.20.word }}</td>
-			<td>{{ card_list.21.word }}</td>
-			<td>{{ card_list.22.word }}</td>
-			<td>{{ card_list.23.word }}</td>
-			<td>{{ card_list.24.word }}</td>
+			<td {% if card_list.20.visibility %} bgcolor="{{ card_list.20.color }}" {% endif %}><a href='toggle_card/{{ card_list.20.id }}'>{{ card_list.20.word }}</a></td>
+			<td {% if card_list.21.visibility %} bgcolor="{{ card_list.21.color }}" {% endif %}><a href='toggle_card/{{ card_list.21.id }}'>{{ card_list.21.word }}</a></td>
+			<td {% if card_list.22.visibility %} bgcolor="{{ card_list.22.color }}" {% endif %}><a href='toggle_card/{{ card_list.22.id }}'>{{ card_list.22.word }}</a></td>
+			<td {% if card_list.23.visibility %} bgcolor="{{ card_list.23.color }}" {% endif %}><a href='toggle_card/{{ card_list.23.id }}'>{{ card_list.23.word }}</a></td>
+			<td {% if card_list.24.visibility %} bgcolor="{{ card_list.24.color }}" {% endif %}><a href='toggle_card/{{ card_list.24.id }}'>{{ card_list.24.word }}</a></td>
 		</tr>
 	</table>	
 
