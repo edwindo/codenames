@@ -1,4 +1,6 @@
-Game!
+<head>
+<meta http-equiv="refresh" content="5">
+</head>
 
 <h1>Red Words</h1>
 <ul>
@@ -24,4 +26,11 @@ Game!
 <h1>Assassin Word</h1>
 <ul>
 	<li>{{ assassinCard.word }}</li>
+</ul>
+
+<h1>Already Found</h1>
+<ul>
+	{% for card in already_found %}
+		<li>{{ card.word }}</li>
+	{% endfor %}
 </ul>

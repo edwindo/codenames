@@ -19,6 +19,8 @@ def index(request):
 			red_count += 1
 		if card.color == "blue" and not card.visibility:
 			blue_count += 1
+		if card.color == "black" and card.visibility:
+			return render(request, 'game/gg.html')
 	context = {'card_list': card_list, 'red_count': red_count, 'blue_count': blue_count}
 	return render(request, 'game/index.html', context)
 
@@ -80,19 +82,25 @@ def codemaster(request):
 	red_list = []
 	blue_list = []
 	yellow_list = []
+	already_found = []
 	
 	for card in card_list:
-		if card.color == "red":
+		if card.color == "red" and not card.visibility:
 			red_list.append(card)
-		if card.color == "blue":
+		elif card.color == "blue" and not card.visibility:
 			blue_list.append(card)
-		if card.color == "yellow":
+		elif card.color == "yellow"and not card.visibility:
 			yellow_list.append(card)
-		if card.color == "black":
+		elif card.color == "black":
 			assassinCard = card
+		else:
+			already_found.append(card)
 
-	context = {'red_list':red_list, 'blue_list':blue_list, 'yellow_list':yellow_list, 'assassinCard':assassinCard}
+
+	context = {'red_list':red_list, 'blue_list':blue_list, 'yellow_list':yellow_list, 'assassinCard':assassinCard, 'already_found':already_found}
 	return render(request, 'game/codemaster.html', context)
+
+
 
 
 
