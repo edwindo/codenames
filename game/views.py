@@ -100,6 +100,11 @@ def codemaster(request):
 	context = {'red_list':red_list, 'blue_list':blue_list, 'yellow_list':yellow_list, 'assassinCard':assassinCard, 'already_found':already_found}
 	return render(request, 'game/codemaster.html', context)
 
+def build(request):
+	return render(request, 'game/build.html')
+
+
+
 
 
 
